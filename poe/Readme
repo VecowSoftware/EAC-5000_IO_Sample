@@ -1,0 +1,7 @@
+﻿format:  poe_set.exe r/s port mode val
+    r/s: read/set
+    port: 1/2/3/4,9(all)
+    mode: 0/1 (auto/manual) (only set mode use)
+    val: 0/1 (off/on) (only set mode use)
+ex1. poe_set.exe r 1
+ex2. poe_set.exe s 1 1 1

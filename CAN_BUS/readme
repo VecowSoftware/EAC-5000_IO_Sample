@@ -1,0 +1,25 @@
+sudo modprobe can
+sudo modprobe can-raw
+sudo modprobe mttcan
+
+//up can0
+sudo ip link set can0 up type can bitrate 125000
+
+//up can1
+sudo ip link set can1 up type can bitrate 125000
+
+
+//can0 read
+./canbus_read 0
+
+
+//can0 write 12345678
+./canbus_write 0
+
+
+
+ip link set can0 down
+
+
+
+

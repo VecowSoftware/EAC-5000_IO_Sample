@@ -1,0 +1,12 @@
+[Kernel Module] sources in ./src/MBPL_DRIVERS_R32_ENG2-usb-src/usb
+  JetPack Version: JetPack 5.1.1 / L4T R35.3.1 / Kernel 5.10.104
+  Ref.: https://source.sierrawireless.com/devices/em-series/em7565/#sthash.Z5VUD0Td.84z81N31.dpbs
+  Usage: 
+    sudo cp ./modules/qcserial.ko /lib/modules/${shell uname -r}/kernel/drivers/usb/serial
+    sudo chown root:root qcserial.ko
+    sudo depmod
+
+[AT command] document in ./docs
+  sudo -s
+  echo -e "AT\r"       | busybox microcom -t 100 /dev/ttyUSB2
+  echo -e "AT+CGMR\r"  | busybox microcom -t 100 /dev/ttyUSB2

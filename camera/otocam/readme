@@ -1,0 +1,14 @@
+for imx390:
+1. install camera driver:
+$ sudo ./init_imx390.sh
+
+2. start to run a Gstreamer pipeline from camera:
+$ sudo ./preview_imx390.sh
+
+
+for imx490:
+1. install camera driver:
+$ sudo ./init_imx490.sh
+
+2. start to run a Gstreamer pipeline from camera:
+$ sudo ./preview_imx490.sh

@@ -1,0 +1,73 @@
+
+DO-CTL1:
+gpio494 PAD.00
+
+DO-CTL2
+gpio495 PAD.01
+
+DO source mode  : DO-CTL1=0 DO-CTL2=1
+DO sink mode: DO-CTL1=1 CO-CTL2=0
+
+
+
+
+Ex: pull DO1 to High:
+# echo 429 > /sys/class/gpio/export
+# echo out > /sys/class/gpio/PM.05/direction
+# echo 1 > /sys/class/gpio/PM.05/value
+
+
+DIO List:
+
+DI1:
+gpio350 PA.02
+
+DI2:
+gpio491 PAC.05
+
+DI3:
+gpio493 PAC.07
+
+DI4:
+gpio489 PAC.03
+
+DI5:
+gpio452 PQ.04
+
+DI6:
+gpio434 PN.02
+
+DI7:
+gpio480 PZ.02
+
+DI8:
+gpio395 PH.04
+
+
+
+
+
+DO1:
+gpio429 PM.05
+
+DO2:
+gpio392 PH.01
+
+DO3:
+gpio423 PL.03
+
+DO4:
+gpio449 PQ.01
+
+DO5:
+gpio398 PH.07
+
+DO6:
+gpio399 PI.00
+
+DO7:
+gpio400 PI.01
+
+DO8:
+gpio401 PI.02
+

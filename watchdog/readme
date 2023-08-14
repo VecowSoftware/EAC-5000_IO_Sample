@@ -1,0 +1,2 @@
+﻿//執行後3秒watchdog觸發
+sudo ./wtd.exe

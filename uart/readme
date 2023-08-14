@@ -1,0 +1,26 @@
+Set com1 to RS232:
+
+sudo ./EAC-5000_setcom 1 232
+
+Set COM1 to RS422:
+
+sudo ./EAC-5000_setcom 1 422
+
+Set COM1 to 485
+
+sudo ./EAC-5000_setcom 1 485
+
+
+RS232/422/485 COM1 loopback:
+
+sudo ./serial_rw 1
+
+RS232/422/485 COM1 COM2 data communication:
+
+sudo ./serial_rw 1 &
+sudo ./serial_rw 2
+
+COM1 RS232 flow control loopback:
+
+sudo ./serial232_r 1 &
+sudo ./serial232_w 1

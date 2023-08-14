@@ -1,0 +1,19 @@
+Change SIM card slot:
+
+sudo sh sim_1.sh  //sim card socket 1
+sudo sh sim_2.sh  //sim card socket 2
+
+1.sim card plug in sim 1 connector
+sudo sh ./sim_1.sh
+
+2.run command (reset module):
+$ sudo ./reset.sh
+
+
+4. Enable Settings -> Network -> Mobile Broadbrand- > Add new connection
+
+
+
+
+
+

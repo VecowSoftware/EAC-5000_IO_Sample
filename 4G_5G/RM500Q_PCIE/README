@@ -1,0 +1,29 @@
+[Kernel Module] for M.2 KEY M
+  JetPack Version: JetPack 5.1.1 / L4T R35.3.1 / Kernel 5.10.104
+  Usage: 
+    sudo cp ./modules/pcie_mhi*.ko /lib/modules/${shell uname -r}/kernel/drivers/pci/
+    sudo ln -s pcie_mhi_mbim.ko pcie_mhi.ko
+    sudo depmod
+  [How to set the module from USB mode to PCIe mode]
+    Ref.: https://forums.quectel.com/t/rm500q-gl-pcie-interface-not-working/9814
+  [QMI mode -> MBIM mode]
+    1.Modify line 193 "mhi_mbim_enabled = 0;"(default, QMI mode) to "mhi_mbim_enabled = 1;"(MBIM mode) 
+      in ./src/Quectel_Linux_PCIE_MHI_Driver_V1.3.4/pcie_mhi/devices/mhi_netdev_quectel.c
+
+[QConnectionManager] sources in ./src/QConnectManager_Linux_V1.6.2/quectel-CM
+Usage:
+sudo cp -f ./bin/quectel-CM /usr/bin
+sudo chown root:root /usr/bin/quectel-CM
+sudo chmod 0755 /usr/bin/quectel-CM
+
+[Connect/Disconnect to network]
+Usage:
+# Connect to Network
+sudo quectel-CM -i rmnet_mhi0 & # Give a specified net interface
+# Disconnect
+sudo killall quectel-CM
+
+[AT command] document in ./docs
+sudo -s
+echo -e "ATI\r"      | busybox microcom -t 100 /dev/mhi_DUN
+echo -e "AT+CGMR\r"  | busybox microcom -t 100 /dev/mhi_DUN

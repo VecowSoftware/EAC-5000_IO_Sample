@@ -1,0 +1,13 @@
+Use the following command to check input device node:
+
+$ sudo dmesg | grep "bmi2xy as /devices/virtual/input/"
+
+Enable ACC sensor:
+
+# echo 1 > /sys/class/input/input8/load_config_stream
+# echo 1 > /sys/class/input/input8/acc_enable
+
+
+Get ACC value:
+
+# cat /sys/class/input/input8/acc_value
