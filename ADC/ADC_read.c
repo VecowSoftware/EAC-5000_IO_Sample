@@ -54,7 +54,7 @@ int main(int argc,char *argv[])
 	printf("ADC_V=%f\n",val*0.0097*21);
 	val = 0;
 	i2c_read(fd,ADC_ADDR ,CH2_REG_ADDR,&val);
-        printf("ADC_I=%f\n",val*0.0097/0.1);// 換料需要修改
+        printf("ADC_I=%f\n",val*0.0097/0.16);// 
 	
 	return 0;
 }

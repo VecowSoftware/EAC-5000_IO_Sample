@@ -6,9 +6,24 @@ $ sudo ./init_imx390.sh
 $ sudo ./preview_imx390.sh
 
 
-for imx490:
+for imx490ISP:
 1. install camera driver:
-$ sudo ./init_imx490.sh
+$ sudo ./init_imx490isp.sh
 
 2. start to run a Gstreamer pipeline from camera:
 $ sudo ./preview_imx490.sh
+
+for imx490RAW:
+1. install camera driver:
+$ sudo ./init_imx490isp.sh
+
+2. start to run a v4l2+OpenCV sample:
+$ sudo python3 ./v4l2_RG12.py
+
+for isx021:
+1. install camera driver:
+$ sudo ./init_isx021.sh
+
+2. start to run a Gstreamer pipeline from camera:
+$ sudo ./preview_isx021.sh
+

@@ -1,1 +1,1 @@
-echo -ne "AT+CFUN=1,1" > /dev/ttyUSB2
+echo -e "AT+CFUN=1,1 \r\n" > /dev/ttyUSB2

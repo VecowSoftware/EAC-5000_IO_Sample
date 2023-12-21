@@ -1,0 +1,20 @@
+Example 1: Streaming 2 MP at 30 fps (HW accelerated)
+Run the following command to stream video in 2 MP resolution.
+
+$ gst-launch-1.0 v4l2src device=/dev/video<n> ! "video/x-raw, format=(string)UYVY, width=(int)1920, height=(int)1080" ! nvvidconv ! "video/x-raw(memory:NVMM), format=(string)I420, width=(int)1920, height=(int)1080" ! fpsdisplaysink text-overlay=0 video-sink=nv3dsink
+
+Note: Replace <n> with the number of video device node, from
+which you need to stream.
+
+Example 2: Record 2 MP in H.264 format to a video file (HW
+accelerated)
+Run the following command to record 2 MP video in H.264 format to
+a video file.
+
+$ gst-launch-1.0 v4l2src device=/dev/video<n> ! "video/x-raw,format=(string)UYVY, width=(int)1920, height=(int)1080" ! nvvidconv ! "video/x-raw(memory:NVMM), format=(string)I420, width=(int)1920, height=(int)1080" ! nvv4l2h264enc qp-range=20,20:20,20:-1,-1 ! avimux ! queue ! filesink location=file.mkv
+
+Example 3: Playback of saved video file (HW accelerated)
+Run the following command to playback the saved video file.
+
+$ gst-launch-1.0 filesrc location=file.mkv ! avidemux ! h264parse ! nvv4l2decoder ! nv3dsink
+

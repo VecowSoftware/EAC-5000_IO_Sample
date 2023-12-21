@@ -1,0 +1,14 @@
+
+1.To enable 10 fps framesync:
+$ sudo init_10hz.sh
+
+To launch streaming in 4k@10fps:
+$ sudo ./preview_10hz.sh
+
+2.To enable 30 fps framesync:
+$ sudo init_30hz.sh
+ 
+To launch streaming in FHD@30fps:
+$ sudo ./preview_30hz.sh
+
+

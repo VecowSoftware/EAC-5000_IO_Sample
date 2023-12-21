@@ -1,1 +1,1 @@
-echo -ne "AT+RESET" > /dev/ttyUSB0
+echo -e "AT+RESET \r\n" > /dev/ttyUSB0
